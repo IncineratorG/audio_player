@@ -15,17 +15,19 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = Services.get().translationService.translation();
+
     return Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            const DrawerHeader(
+            DrawerHeader(
               // decoration: BoxDecoration(
               //   color: Colors.blue,
               // ),
               child: Text(
-                'Drawer Header',
-                style: TextStyle(
+                t("AppDrawer_title"),
+                style: const TextStyle(
                   // color: Colors.white,
                   fontSize: 24,
                 ),
@@ -33,27 +35,9 @@ class AppDrawer extends StatelessWidget {
             ),
             ListTile(
               // leading: const Icon(Icons.message),
-              title: const Text('Select folder'),
+              title: Text(t("AppDrawer_selectFolder")),
               onTap: () {
                 _selectFolderPressHandler(context);
-              },
-            ),
-            ListTile(
-              // leading: const Icon(Icons.account_circle),
-              title: const Text('Profile'),
-              onTap: () {
-                // setState(() {
-                //   selectedPage = 'Profile';
-                // });
-              },
-            ),
-            ListTile(
-              // leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {
-                // setState(() {
-                //   selectedPage = 'Settings';
-                // });
               },
             ),
           ],

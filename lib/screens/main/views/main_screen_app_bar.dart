@@ -1,3 +1,4 @@
+import 'package:audio_player/services/services.dart';
 import 'package:flutter/material.dart';
 
 class MainScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -8,12 +9,14 @@ class MainScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override 
   Widget build(BuildContext context) {
+    final t = Services.get().translationService.translation();
+
     return AppBar(
-      title: const Row(
+      title: Row(
         children: [
           Expanded(
             child: Center(
-              child: Text('Title'),
+              child: Text(t("MainScreen_defaultTitle")),
             ),
           )
         ],

@@ -101,7 +101,7 @@ class _MainScreenState extends State<MainScreenView> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.pause, size: 12),
+                      Icon(Icons.play_arrow, size: 48),
                     ],
                   ),
                 ),
